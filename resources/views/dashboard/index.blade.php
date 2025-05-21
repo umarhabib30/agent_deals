@@ -1,4 +1,10 @@
 @extends('layouts.dashboard')
+@section('style')
+
+<!-- Add required CSS -->
+
+@endsection
+
 @section('content')
     <div class="col-md-10 px-5">
         <div class="row mt-5">
@@ -104,7 +110,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="background-color:white;">
                     <div class="progress px-1" style="height: 3px;">
                         <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
@@ -179,7 +185,7 @@
                                 <!-- Brokerage License Number -->
                                 <div class="col-md-6 mb-3">
                                     <label for="licenseNumber" class="form-label">Brokerage License Number</label>
-                                    <input type="text" class="form-controls w-100" id="licenseNumber" value="" name="brokerage_license_no" readonly>
+                                    <input type="text" class="form-controls w-100" id="licenseNumber" value="1448140" name="brokerage_license_no" readonly>
                                     <small class="text-muted">Pre-filled with your registered license number</small>
                                 </div>
                             </div>
@@ -269,26 +275,26 @@
                                 <!-- Project Value -->
                                 <div class="col-md-6 mb-3">
                                     <label for="projectValue" class="form-label">Project Value</label>
-                                    <input type="text" class="form-control" id="projectValue" placeholder="Enter project value" name="project_value">
+                                    <input type="number" class="form-control" id="projectValue" placeholder="Enter project value" name="project_value">
                                 </div>
                                 <!-- Commission Percentage -->
                                 <div class="col-md-6 mb-3">
                                     <label for="commissionPercentage" class="form-label">Commission Percentage</label>
-                                    <input type="text" class="form-control" id="commissionPercentage" placeholder="Enter commission percentage" name="commission_percentage">
+                                    <input type="number" class="form-control" id="commissionPercentage" placeholder="Enter commission percentage" name="commission_percentage">
                                 </div>
                             </div>
                             <div class="row">
                                 <!-- Commission Amount -->
                                 <div class="col-md-6 mb-3">
                                     <label for="commissionAmount" class="form-label">Commission Amount</label>
-                                    <input type="text" class="form-control" id="commissionAmount" placeholder="Enter commission amount" name="commission_amount">
+                                    <input type="number" readonly class="form-control" id="commissionAmount" placeholder="Enter commission amount" name="commission_amount">
                                 </div>
                                 <!-- Deal Status -->
                                 <div class="col-md-6 mb-3">
                                     <label for="dealStatus" class="form-label">Deal Status</label>
                                     <select class="form-select" id="dealStatus" name="deal_status">
                                         <option selected>In Progress</option>
-                                        <option value="Closed">Closed</option>
+                                        {{-- <option value="Closed">Closed</option> --}}
                                     </select>
                                 </div>
                             </div>
@@ -308,34 +314,34 @@
                         <div class="step step-5">
                             <h3 class="mb-5">Review Details</h3>
 
-                            <div class="card p-3 border-0">
+                            <div class="card p-3 border-0 project-details-preview">
                                 <h5 class="mb-4">Project Details</h5>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <strong class="light-gray-1">Project Type</strong>
-                                        <p class="fw-bold"> Off plan</p>
+                                        <p class="fw-bold project-type">Off plan</p>
                                     </div>
                                     <div class="col-md-6">
                                         <strong class="light-gray-1">Project Name</strong>
-                                        <p class="fw-bold"> SkyView</p>
+                                        <p class="fw-bold project-name"></p>
                                     </div>
                                     <div class="col-md-6 mt-3">
                                         <strong class="light-gray-1">Developer</strong>
-                                        <p class="fw-bold"> Emaar</p>
+                                        <p class="fw-bold developer"></p>
                                     </div>
                                     <div class="col-md-6 mt-3">
                                         <strong class="light-gray-1">Location</strong>
-                                        <p class="fw-bold"> Dubai, Dubai</p>
+                                        <p class="fw-bold location"></p>
                                     </div>
                                 </div>
                             </div>
                             <!-- Agent Information -->
-                            <div class="card p-3 border-0">
+                            <div class="card p-3 border-0 agent-info-preview">
                                 <h5 class="mb-4">Agent Information</h5>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <strong class="light-gray-1">Agent Name</strong>
-                                        <p class="fw-bold"></p>
+                                        <p class="fw-bold agent-name"></p>
                                     </div>
                                     <div class="col-md-6">
                                         <strong class="light-gray-1">Brokerage</strong>
@@ -343,66 +349,50 @@
                                     </div>
                                     <div class="col-md-6 mt-3">
                                         <strong class="light-gray-1">Brokerage License</strong>
-                                        <p class="fw-bold"> 1414879</p>
+                                        <p class="fw-bold license"></p>
                                     </div>
                                 </div>
                             </div>
                             <!-- Banking Information -->
-                            <div class="card p-3 border-0">
-                                <h5 class="mb-4">Banking Information <span class="required">*</span>
-                                </h5>
+                            <div class="card p-3 border-0 banking-info-preview">
+                                <h5 class="mb-4">Banking Information</h5>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <strong class="light-gray-1">Account Holder Name</strong>
-                                        <span class="required">Required</span>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <strong class="light-gray-1">SWIFT/BIC Number</strong>
-                                        <span class="required">Required</span>
-                                    </div>
-                                    <div class="col-md-6 mt-3">
-                                        <strong class="light-gray-1">IBAN Number</strong>
-                                        <span class="required">Required</span>
-                                    </div>
-                                    <div class="col-md-6 mt-3">
-                                        <strong class="light-gray-1">Bank Country</strong>
-                                        <span class="required">Required</span>
-                                    </div>
+                                    <!-- Will be populated by JavaScript -->
                                 </div>
                             </div>
                             <!-- Client Information -->
-                            <div class="card p-3 border-0">
+                            <div class="card p-3 border-0 client-info-preview">
                                 <h5 class="mb-4">Client Information</h5>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <strong class="light-gray-1">Client Name</strong>
-                                        <p class="fw-bold"></p>
+                                        <p class="fw-bold client-name"></p>
                                     </div>
                                     <div class="col-md-6">
                                         <strong class="light-gray-1">Client Paying Initial Fees (20% + 4% DLD)</strong>
-                                        <p class="fw-bold"> No</p>
+                                        <p class="fw-bold"></p>
                                     </div>
                                 </div>
                             </div>
                             <!-- Financial Details -->
-                            <div class="card p-3 border-0">
+                            <div class="card p-3 border-0 financial-details-preview">
                                 <h5 class="mb-4">Financial Details</h5>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <strong class="light-gray-1">Project Value</strong>
-                                        <p class="fw-bold"> $NaN</p>
+                                        <p class="fw-bold project-value"></p>
                                     </div>
                                     <div class="col-md-6">
                                         <strong class="light-gray-1">Commission</strong>
-                                        <p class="fw-bold"> $NaN (%)</p>
+                                        <p class="fw-bold commission"></p>
                                     </div>
                                     <div class="col-md-6 mt-3">
                                         <strong class="light-gray-1">Deal Status</strong>
-                                        <p class="fw-bold"> In Progress</p>
+                                        <p class="fw-bold"></p>
                                     </div>
                                     <div class="col-md-6 mt-3">
                                         <strong class="light-gray-1">Closing Date</strong>
-                                        <p class="fw-bold"> May 17th, 2025</p>
+                                        <p class="fw-bold closing-date"></p>
                                     </div>
                                 </div>
                             </div>
@@ -420,3 +410,226 @@
     {{-- model end --}}
 
 @endsection
+@section('script')
+<script>
+
+
+
+
+var currentStep = 1;
+var updateProgressBar;
+
+// Configure toastr options
+$(document).ready(function () {
+    toastr.options = {
+        "closeButton": true,
+        "newestOnTop": false,
+        "progressBar": true,
+        "preventDuplicates": true,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+
+    function calculateCommission() {
+        const projectValue = parseFloat($('#projectValue').val()) || 0;
+        const commissionPercentage = parseFloat($('#commissionPercentage').val()) || 0;
+        const commissionAmount = (projectValue * commissionPercentage) / 100;
+
+        // Update commission amount field with calculated value
+        $('#commissionAmount').val(commissionAmount.toFixed(2));
+    }
+
+    // Add event listeners for input changes
+    $('#projectValue, #commissionPercentage').on('input', function() {
+        calculateCommission();
+    });
+
+    // Function to validate required fields in a step
+    function validateStep(stepNumber) {
+        let isValid = true;
+        const $step = $(`.step-${stepNumber}`);
+        const $requiredFields = $step.find('input[required], select[required], textarea[required]');
+
+        $requiredFields.removeClass('is-invalid');
+
+        $requiredFields.each(function() {
+            if (!$(this).val().trim()) {
+                isValid = false;
+                $(this).addClass('is-invalid');
+                const fieldName = $(this).attr('name')
+                    .replace(/_/g, ' ')
+                    .replace(/\b\w/g, l => l.toUpperCase());
+                toastr.error(`${fieldName} is required`);
+            }
+        });
+
+        if (stepNumber === 3 && !$('input[name="is_dld"]:checked').length) {
+            isValid = false;
+            toastr.error('Please select whether client will pay initial fees');
+            $('.is_dld-options').addClass('is-invalid');
+        }
+
+        return isValid;
+    }
+
+    $('#multi-step-form').find('.step').slice(1).hide();
+
+    $(".next-step").click(function (e) {
+        e.preventDefault();
+
+        if (validateStep(currentStep)) {
+            if (currentStep < 5) {
+                $(".step-" + currentStep).addClass("animate__animated animate__fadeOutLeft");
+                currentStep++;
+                setTimeout(function () {
+                    $(".step").removeClass("animate__animated animate__fadeOutLeft").hide();
+                    $(".step-" + currentStep)
+                        .show()
+                        .addClass("animate__animated animate__fadeInRight");
+
+                    // Update preview values when reaching step 5
+                    if (currentStep === 5) {
+                        updatePreviewValues();
+                    }
+
+                    updateProgressBar();
+                }, 500);
+            }
+        }
+    });
+
+    $(".prev-step").click(function () {
+        if (currentStep > 1) {
+            $(".step-" + currentStep).addClass("animate__animated animate__fadeOutRight");
+            currentStep--;
+            setTimeout(function () {
+                $(".step").removeClass("animate__animated animate__fadeOutRight").hide();
+                $(".step-" + currentStep)
+                    .show()
+                    .addClass("animate__animated animate__fadeInLeft");
+                updateProgressBar();
+            }, 500);
+        }
+    });
+
+    updateProgressBar = function () {
+        var progressPercentage = ((currentStep - 1) / 4) * 100;
+        $(".progress-bar").css("width", progressPercentage + "%");
+
+        $(".step-circle").each(function (index) {
+            if (index < currentStep) {
+                $(this).addClass("bg-success text-white");
+            } else {
+                $(this).removeClass("bg-success text-white");
+            }
+        });
+    };
+
+    // Add CSS for invalid fields
+    $('<style>')
+        .text(`
+            .is-invalid {
+                border-color: #dc3545 !important;
+                box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+            }
+            .form-controls.is-invalid {
+                background-color: #fff !important;
+            }
+        `)
+        .appendTo('head');
+
+    // Real-time validation on input
+    $('input[required], select[required], textarea[required]').on('input change', function() {
+        if ($(this).val().trim()) {
+            $(this).removeClass('is-invalid');
+        }
+    });
+
+    // Real-time validation for radio buttons
+    $('input[name="is_dld"]').on('change', function() {
+        $('.is_dld-options').removeClass('is-invalid');
+    });
+
+    updateProgressBar(); // Initialize on load
+});
+
+// Add this function to update preview values
+function updatePreviewValues() {
+    // Helper function to wrap "Not provided" in red
+    const formatValue = (val) => val || '<span style="color: red;">Not provided</span>';
+
+    // Project Details
+    $('.step-5 .project-details-preview .project-name').html(formatValue($('input[name="project_name"]').val()));
+    $('.step-5 .project-details-preview .developer').html(formatValue($('select[name="developer"]').val()));
+
+    const city = $('input[name="city"]').val();
+    const state = $('input[name="state"]').val();
+    $('.step-5 .project-details-preview .location').html(
+        (city && state) ? `${city}, ${state}` : '<span style="color: red;">Not provided</span>'
+    );
+
+    // Agent Information
+    $('.step-5 .agent-info-preview .agent-name').html(formatValue($('input[name="agent_name"]').val()));
+    $('.step-5 .agent-info-preview .brokerage').html(formatValue($('input[name="brokerage_name"]').val()));
+    $('.step-5 .agent-info-preview .license').html(formatValue($('input[name="brokerage_license_no"]').val()));
+
+    // Banking Information
+    $('.step-5 .banking-info-preview .row').html(`
+        <div class="col-md-6">
+            <strong class="light-gray-1">Account Holder Name</strong>
+            <p class="fw-bold">${formatValue($('input[name="account_holder_name"]').val())}</p>
+        </div>
+        <div class="col-md-6">
+            <strong class="light-gray-1">SWIFT/BIC Number</strong>
+            <p class="fw-bold">${formatValue($('input[name="swift_number"]').val())}</p>
+        </div>
+        <div class="col-md-6 mt-3">
+            <strong class="light-gray-1">IBAN Number</strong>
+            <p class="fw-bold">${formatValue($('input[name="iban_number"]').val())}</p>
+        </div>
+        <div class="col-md-6 mt-3">
+            <strong class="light-gray-1">Bank Country</strong>
+            <p class="fw-bold">${formatValue($('input[name="bank_country"]').val())}</p>
+        </div>
+    `);
+
+    // Client Information
+    $('.step-5 .client-info-preview .client-name').html(formatValue($('input[name="client_name"]').val()));
+    $('.step-5 .client-info-preview .row div:last-child p').text(
+        $('input[name="is_dld"]:checked').val() === 'true' ? 'Yes' : 'No'
+    );
+
+    // Financial Details
+    const projectValue = parseFloat($('input[name="project_value"]').val()) || 0;
+    const commissionPercentage = parseFloat($('input[name="commission_percentage"]').val()) || 0;
+    const commissionAmount = parseFloat($('input[name="commission_amount"]').val()) || 0;
+    const dealStatus = $('#dealStatus').val();
+
+    $('.step-5 .financial-details-preview .project-value').html(
+        projectValue ? `AED ${projectValue.toLocaleString()}` : '<span style="color: red;">Not provided</span>'
+    );
+    $('.step-5 .financial-details-preview .commission').html(
+        `AED ${commissionAmount.toLocaleString()} (${commissionPercentage}%)`
+    );
+    $('.step-5 .financial-details-preview .row div:nth-child(3) p').html(formatValue(dealStatus));
+    $('.step-5 .financial-details-preview .closing-date').html(
+        $('#closingDate').val()
+            ? new Date($('#closingDate').val()).toLocaleDateString('en-US', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric'
+            })
+            : '<span style="color: red;">Not provided</span>'
+    );
+}
+
+
+</script>
+@endsection
+
