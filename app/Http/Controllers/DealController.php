@@ -32,4 +32,19 @@ class DealController extends Controller
             return redirect()->back()->with('error', $e->getMessage());
         }
     }
+
+    public function details($id)
+    {
+        $deal = Deal::find($id);
+        if (!$deal) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Deal not found',
+            ], 404);
+        }
+        return response()->json([
+            'status' => true,
+            'data' => $deal,
+        ]);
+    }
 }

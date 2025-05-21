@@ -75,8 +75,8 @@
                     <div class="form-check mt-3">
                         <input class="form-check-input" type="checkbox" id="termsCheck" required />
                         <label class="form-check-label" for="termsCheck">
-                            I agree to the <a href="#">terms and conditions</a> and
-                            <a href="#">privacy policy</a>.
+                            I agree to the <a href="{{ route('terms') }}">terms and conditions</a> and
+                            <a href="{{ route('privacy') }}">privacy policy</a>.
                         </label>
                     </div>
 

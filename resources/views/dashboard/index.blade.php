@@ -301,7 +301,7 @@
                             <!-- Closing Date -->
                             <div class="mb-3">
                                 <label for="closingDate" class="form-label">Closing Date</label>
-                                <input type="date" class="form-control" id="closingDate" value="" value="closing_date">
+                                <input type="date" class="form-control" name="closing_date" id="closingDate" value="" value="closing_date">
                             </div>
 
 
