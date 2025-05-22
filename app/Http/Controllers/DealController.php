@@ -25,6 +25,7 @@ class DealController extends Controller
         try {
             $data = $request->all();
             $data['created_by'] = Auth::user()->id;
+            $data['reference_number'] = 'REF-' . strtoupper(uniqid());
 
             Deal::create($data);
             return redirect()->back()->with('success', 'Deal Submitted Successfully');

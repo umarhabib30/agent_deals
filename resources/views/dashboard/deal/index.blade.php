@@ -22,9 +22,9 @@
                                 <tr>
                                     <th scope="row"></th>
                                     <td>{{ $deal->closing_date ? \Carbon\Carbon::parse($deal->closing_date)->format('d-m-y') : '-' }}</td>
-                                    <td>INV-0123</td>
+                                    <td>{{ $deal->reference_number }}</td>
                                     <td>{{ $deal->client_name }}</td>
-                                    <td>${{ $deal->commission_amount }}</td>
+                                    <td>${{ $deal->project_value }}</td>
                                     <td>{{ $deal->deal_status }}</td>
                                     <td>
                                         <a href="#" deal-id={{ $deal->id }} class="btn btn-green deal_details">View Details</a>

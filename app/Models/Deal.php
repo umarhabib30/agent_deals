@@ -11,6 +11,7 @@ class Deal extends Model
 
     protected $fillable=[
         'created_by',
+        'reference_number',
         'project_type',
         'project_name',
         'developer',

@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('deals', function (Blueprint $table) {
             $table->id();
             $table->foreignId('created_by')->constrained('users')->onDelete('cascade');
-
+            $table->string('reference_number')->nullable();
+            
             $table->string('project_type')->nullable();
             $table->string('project_name')->nullable();
             $table->string('developer')->nullable();
