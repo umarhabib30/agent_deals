@@ -25,6 +25,9 @@ class User extends Authenticatable
         'phone',
         'password',
         'profile_image',
+        'emirate_id_image',
+        'is_emirate_verified',
+        'is_phone_verified',
     ];
 
     /**
