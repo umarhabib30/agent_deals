@@ -1,4 +1,11 @@
 @extends('layouts.app')
+<style>
+    @media only screen and (max-width: 500px) {
+	.dropdown {
+        display:none;
+    }
+}
+</style>
 @section('content')
 <div class="container mt-5">
     <div class="row">
@@ -26,7 +33,7 @@
         <div class="col-md-12 mb-5">
             <h2 class="text-center">How it works </h2>
         </div>
-        <div class="col-md-4 px-5">
+        <div class="col-md-4 px-md-5 px-sm-0">
             <div class="d-flex justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60"  viewBox="0 0 27 27" fill="none">
                     <rect opacity="0.47" x="0.5" y="0.5" width="26" height="26" fill="url(#pattern0_19_96)"/>
@@ -43,7 +50,7 @@
                 <p class="text-center" style=" font-size: 20px; ">Register and share your sales agreement and key info to get started.</p>
             </div>
         </div>
-        <div class="col-md-4 px-5">
+        <div class="col-md-4 px-md-5 px-sm-0">
             <div class="d-flex justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" viewBox="0 0 26 26" fill="none">
                     <rect opacity="0.47" width="26" height="26" fill="url(#pattern0_19_100)"/>
@@ -60,7 +67,7 @@
                 <p class="text-center" style=" font-size: 20px; ">Submissions are reviewed and advance payments approved within 24 hours.</p>
             </div>
         </div>
-        <div class="col-md-4 px-5">
+        <div class="col-md-4 px-md-5 px-sm-0">
             <div class="d-flex justify-content-center">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60"  viewBox="0 0 27 26" fill="none">
                     <rect opacity="0.47" x="0.5" width="26" height="26" fill="url(#pattern0_19_104)"/>

@@ -122,10 +122,10 @@
                 <p class="fw-900 h-14 mt-5 mb-2">Email: admin@huzproperties.com</p>
                 <p class="fw-900 h-14 mb-2">Phone: +971 45586523</p>
                 <p class="fw-900 h-14 mb-2">Address: Office No.1607, Westburry Tower, Business Bay, Dubai, U.A.E</p>
+                <div class="col-md-12 py-5">
+                    <a href="{{ url('/') }}" class="btn btn-green">Back to Home</a>
+                </div>
             </div>
-        </div>
-        <div class="col-md-12 d-flex justify-content-center py-5">
-            <a href="{{ route('login') }}" class="btn btn-dark">Return to Sign In</a>
         </div>
         <div class="col-md-12">
             <p class="text-center">

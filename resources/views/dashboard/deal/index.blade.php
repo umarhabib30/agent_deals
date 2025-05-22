@@ -40,8 +40,10 @@
     </div>
 
     {{-- deal details model --}}
-     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" style="max-width: 800px !important;">
+     <div class="modal fade modal-right" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-right" style="max-width: 800px;">
+
             <div class="modal-content" style="height: 100%;">
                 <div class="modal-header" style="border-bottom: 0px !important;">
                     <div class="w-100">
