@@ -14,9 +14,11 @@
                 <p style="color:#000000;font-weight:400;font-size:16px;">Welcome back, {{Auth::user()->full_name}}. Here's overview.</p>
             </div>
         </div>
-        <div class="col-md-6 d-flex justify-content-end">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"
+        <div class="col-md-6 d-flex justify-content-end align-items-center">
+            <div>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"
                 class="btn btn-green">Submit Deal</button>
+            </div>
         </div>
     </div>
     <div class="row mt-4">
