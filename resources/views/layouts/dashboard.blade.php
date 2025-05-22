@@ -56,7 +56,7 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid px-3">
+    <div class="container-fluid px-3 h-100">
         <div class="row">
             <div class="col-md-2 light-green">
                 <nav class="navbar navbar-expand-lg navbar-light">

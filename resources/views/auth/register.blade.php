@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <div class="row mt-5">
+        <div class="row mt-5 flex-direction">
             <!-- Left Side -->
-            <div class="col-lg-6 d-flex flex-column align-items-center px-5">
+            <div class="col-lg-6 d-flex flex-column align-items-center px-md-5 px-sm-0">
                 <!-- Replace with actual image in your project -->
                 <img src="{{ asset('assets/images/header.PNG') }}" class="img-fluid mb-4" alt="Deal illustration" />
                 <p class="hero-text text-center">Close deals. Get paid. Same day.</p>
@@ -39,7 +39,7 @@
             </div>
 
             <!-- Right Side (Form) -->
-            <div class="col-lg-6 border-start d-flex flex-column form-section">
+            <div class="col-lg-6 border-start d-flex flex-column form-section b-bottom">
                 <h4>Sign up</h4>
                 <p class="text-muted">Get paid faster sign up today</p>
 
