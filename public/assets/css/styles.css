@@ -516,6 +516,9 @@ html, body {
 	}
 }
 @media only screen and (max-width: 600px) {
+	.bar-4234{
+		display: none !important;
+	}
 	.jfgksgjk-483{
 		display: none !important;
 	}
