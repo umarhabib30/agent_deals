@@ -108,7 +108,7 @@
     <script src="https://kit.fontawesome.com/f5eb8f10bc.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script src="{{ asset('assets/js/script.js') }}"></script>
+    
     @yield('script')
 </body>
 

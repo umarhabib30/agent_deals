@@ -1,57 +1,85 @@
-const labels = ["2016", "2017", "2018", "2019", "2020", "2021", "2022"];
-    const salesData = [20, 30, 55, 43, 67, 61, 85];
-    const revenueData = [95, 120, 170, 130, 190, 180, 270];
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-    const ctx = document.getElementById("areaChart").getContext("2d");
-    const areaChart = new Chart(ctx, {
-      type: "line",
-      data: {
-        labels: labels,
+// Get data arrays from the values in monthlyData (converting object to array)
+const currentYearData = {
+    sales: Object.values(monthlyData.currentYear.sales),
+    revenue: Object.values(monthlyData.currentYear.revenue)
+};
+
+const lastYearData = {
+    sales: Object.values(monthlyData.lastYear.sales),
+    revenue: Object.values(monthlyData.lastYear.revenue)
+};
+
+const ctx = document.getElementById("areaChart").getContext("2d");
+const areaChart = new Chart(ctx, {
+    type: "line",
+    data: {
+        labels: months,
         datasets: [
-          {
-            label: "Sale",
-            data: salesData,
-            backgroundColor: "rgba(54, 162, 235, 0.4)",
-            borderColor: "rgba(54, 162, 235, 0.8)",
-            fill: true,
-            tension: 0.4,
-            pointRadius: 0
-          },
-          {
-            label: "Revenue",
-            data: revenueData,
-            backgroundColor: "rgba(75, 192, 192, 0.6)",
-            borderColor: "rgba(75, 192, 192, 1)",
-            fill: true,
-            tension: 0.4,
-            pointRadius: 0
-          }
+            {
+                label: `${currentYear} Sales`,
+                data: currentYearData.sales,
+                backgroundColor: "rgba(54, 162, 235, 0.4)",
+                borderColor: "rgba(54, 162, 235, 0.8)",
+                fill: true,
+                tension: 0.4,
+                pointRadius: 0
+            },
+            {
+                label: `${lastYear} Sales`,
+                data: lastYearData.sales,
+                backgroundColor: "rgba(75, 192, 192, 0.4)",
+                borderColor: "rgba(75, 192, 192, 0.8)",
+                fill: true,
+                tension: 0.4,
+                pointRadius: 0
+            }
         ]
-      },
-      options: {
+    },
+    options: {
         responsive: true,
         plugins: {
-          legend: {
-            position: "top"
-          },
-          tooltip: {
-            mode: "index",
-            intersect: false
-          }
+            legend: {
+                position: "top"
+            },
+            tooltip: {
+                mode: "index",
+                intersect: false,
+                callbacks: {
+                    label: function(context) {
+                        let label = context.dataset.label || '';
+                        let value = context.parsed.y;
+
+                        // Add revenue data to tooltip
+                        if (label.includes(currentYear)) {
+                            return [
+                                `${currentYear} Sales: ${value}`,
+                                `${currentYear} Revenue: ${currentYearData.revenue[context.dataIndex]}`
+                            ];
+                        } else {
+                            return [
+                                `${lastYear} Sales: ${value}`,
+                                `${lastYear} Revenue: ${lastYearData.revenue[context.dataIndex]}`
+                            ];
+                        }
+                    }
+                }
+            }
         },
         interaction: {
-          mode: "nearest",
-          axis: "x",
-          intersect: false
+            mode: "nearest",
+            axis: "x",
+            intersect: false
         },
         scales: {
-          y: {
-            beginAtZero: true,
-            max: 300
-          }
+            y: {
+                beginAtZero: true,
+                max: 300
+            }
         }
-      }
-    });
+    }
+});
 
 
 

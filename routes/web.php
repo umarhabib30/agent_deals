@@ -43,6 +43,7 @@ Route::middleware('auth:user')->group(function () {
     Route::get('profile',[ProfileController::class, 'index'])->name('profile');
     Route::post('profile/account/update',[ProfileController::class, 'updateAccount'])->name('account.update');
     Route::post('profile/update-password',[ProfileController::class, 'updatePassword'])->name('account.password');
+    Route::post('profile/upload-emirate',[ProfileController::class, 'uploadEmirate'])->name('emirate.upload');
 });
 
 
@@ -57,6 +58,8 @@ Route::middleware('auth:admin')->group(function(){
     Route::get('admin/deal/details/{id}',[AdminDealController::class, 'details'])->name('admin.deal.details');
     Route::get('admin/deal/edit/{id}',[AdminDealController::class, 'edit'])->name('admin.deal.edit');
     Route::post('admin/deal/update',[AdminDealController::class, 'update'])->name('admin.deal.update');
+    Route::get('admin/deal/payouts/{id}',[AdminDealController::class,'payouts'])->name('admin.deal.payouts');
+    Route::post('admin/deal/payouts/store',[AdminDealController::class,'payoutsStore'])->name('admin.deal.payouts.store');
 
     Route::get('admin/users',[AdminUserController::class, 'index'])->name('admin.users');
     Route::get('admin/user/edit/{id}',[AdminUserController::class, 'edit'])->name('admin.user.edit');

@@ -54,6 +54,15 @@ class ProfileController extends Controller
         } else {
             return redirect()->back()->with('error', 'Current password does not match');
         }
+    }
 
+    public function uploadEmirate(Request $request){
+        $auth_user = User::find(Auth::user()->id);
+        $user = User::find($auth_user->id);
+        $path = ImageHelper::saveImage($request->emirates_id, 'emirates');
+        $user->update([
+            'emirate_id_image' => $path,
+        ]);
+        return redirect()->back()->with('success', 'Emirate ID uploaded successfully');
     }
 }

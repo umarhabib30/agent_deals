@@ -3,7 +3,6 @@
     <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
-              
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered first">
@@ -14,6 +13,7 @@
                                     <th>Client</th>
                                     <th>Amount</th>
                                     <th>Status</th>
+                                    <th>Action</th>
                                     <th>Action</th>
                                     <th>Action</th>
                                 </tr>
@@ -28,6 +28,7 @@
                                         <td>{{ $deal->deal_status }}</td>
                                         <td><a href="{{ route('admin.deal.details', $deal->id) }}" class="btn btn-primary">Details</a></td>
                                         <td><a href="{{ route('admin.deal.edit', $deal->id) }}" class="btn btn-primary">Edit</a></td>
+                                        <td><a href="{{ route('admin.deal.payouts', $deal->id) }}" class="btn btn-primary">Payouts</a></td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -36,8 +37,5 @@
                 </div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- end basic table  -->
-        <!-- ============================================================== -->
     </div>
 @endsection
