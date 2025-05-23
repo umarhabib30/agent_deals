@@ -49,7 +49,7 @@
                     <div class="card-body">
                         <h5 class="text-muted">Total User</h5>
                         <div class="metric-value d-inline-block">
-                            <h1 class="mb-1">AED {{ $total_users }}</h1>
+                            <h1 class="mb-1">{{ $total_users }}</h1>
                         </div>
                         <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
                             {{-- <span>-2.00%</span> --}}

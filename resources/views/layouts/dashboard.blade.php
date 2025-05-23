@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-light px-3">
         <div class="container-fluid">
             <a class="navbar-brand fdafaf" href="#">
-                <img class="logo" src="{{ asset('assets/images/logo-dashboard.PNG') }}">
+                <img class="logo" src="{{ asset('assets/images/logo-dashboard.png') }}">
             </a>
             <!-- <div>
                 <ul class="nav" role="tablist">
@@ -108,7 +108,7 @@
     <script src="https://kit.fontawesome.com/f5eb8f10bc.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    
+
     @yield('script')
 </body>
 
