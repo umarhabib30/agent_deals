@@ -13,7 +13,7 @@
                         Here's overview.</p>
                 </div>
             </div>
-            <div class="col-md-6 d-flex justify-content-end align-items-center">
+            <div class="col-md-6 d-flex justify-content-end align-items-center jhgjh-8788">
                 <div>
                     <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         data-bs-whatever="@getbootstrap" class="btn btn-green">Submit Deal</button>
@@ -98,7 +98,7 @@
     {{-- model to add new deal --}}
     <div class="modal fade modal-right" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-right" style="max-width: 800px !important; height: 1400px;">
+        <div class="modal-dialog modal-dialog-right">
             <div class="modal-content" style="height: 100%;">
                 <div class="modal-header" style="border-bottom: 0px !important;">
                     <div class="w-100">

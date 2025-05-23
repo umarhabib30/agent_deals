@@ -1,10 +1,11 @@
 @extends('layouts.dashboard')
 @section('content')
-    <div class="col-md-10 px-5 mt-5">
-        <div class="row">
-            <div class="col-lg-12 col-md-6 col-sm-12">
-                <div class="light-green p-3 deals">
-                    <p>Recent Deals</p>
+<div class="col-md-10 px-md-5 px-sm-0 mt-5">
+    <div class="row">
+        <div class="col-lg-12 col-md-6 col-sm-12">
+            <div class="light-green p-3 deals">
+                <p>Recent Deals</p>
+                <div class="table-responsive-x">
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -19,17 +20,19 @@
                         </thead>
                         <tbody>
                             @foreach ($deals as $deal)
-                                <tr>
-                                    <th scope="row"></th>
-                                    <td>{{ $deal->closing_date ? \Carbon\Carbon::parse($deal->closing_date)->format('d-m-y') : '-' }}</td>
-                                    <td>{{ $deal->reference_number }}</td>
-                                    <td>{{ $deal->client_name }}</td>
-                                    <td>${{ $deal->project_value }}</td>
-                                    <td>{{ $deal->deal_status }}</td>
-                                    <td>
-                                        <a href="#" deal-id={{ $deal->id }} class="btn btn-green deal_details">View Details</a>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td>{{ $deal->closing_date ? \Carbon\Carbon::parse($deal->closing_date)->format('d-m-y') : '-' }}
+                                </td>
+                                <td>{{ $deal->reference_number }}</td>
+                                <td>{{ $deal->client_name }}</td>
+                                <td>${{ $deal->project_value }}</td>
+                                <td>{{ $deal->deal_status }}</td>
+                                <td>
+                                    <a href="#" deal-id={{ $deal->id }} class="btn btn-green deal_details">View
+                                        Details</a>
+                                </td>
+                            </tr>
                             @endforeach
 
                         </tbody>
@@ -40,9 +43,10 @@
     </div>
 
     {{-- deal details model --}}
-     <div class="modal fade modal-right" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade modal-right" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
 
-        <div class="modal-dialog modal-dialog-right" style="max-width: 800px;">
+        <div class="modal-dialog modal-dialog-right">
 
             <div class="modal-content" style="height: 100%;">
                 <div class="modal-header" style="border-bottom: 0px !important;">
@@ -162,7 +166,7 @@
                                 </div>
                             </div>
 
-                           <div class="d-flex justify-content-between">
+                            <div class="d-flex justify-content-between">
                                 <button type="button" class="btn btn-outlined" data-bs-dismiss="modal">Back</button>
                             </div>
                         </div>
@@ -171,10 +175,10 @@
             </div>
         </div>
     </div>
-@endsection
+    @endsection
 
-@section('script')
-<script>
+    @section('script')
+    <script>
     $(document).ready(function() {
         $('.btn-outlined').click(function() {
             $('#exampleModal').modal('hide');
@@ -187,7 +191,7 @@
                 url: "{{ url('deal/details') }}/" + dealId,
                 type: 'GET',
                 success: function(response) {
-                    if(response.status) {
+                    if (response.status) {
                         const data = response.data;
 
                         // Project Details
@@ -291,5 +295,5 @@
             });
         });
     });
-</script>
-@endsection
+    </script>
+    @endsection

@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
 
     {{-- toastr cdns --}}
-     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     @yield('style')
 
@@ -25,25 +27,81 @@
         <div class="container-fluid">
             <a class="navbar-brand fdafaf" href="#">
                 <img class="logo" src="{{ asset('assets/images/logo-dashboard.png') }}">
+            <!-- <span class="klsd-5435" style="display: none;">
+                <i style="font-size: 25px;" class="fas fa-bars" aria-hidden="true"></i>
+            </span> -->
+
+
+            <div class="dropdown klsd-5435" style="display: none;">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-bars" style="font-size: 25px;" ></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                    <div class="row">
+            <div class="col-md-2 light-green ">
+                <nav class="navbar navbar-expand-lg navbar-light light-green">
+                    <div class="">
+
+                        <ul class="navbar-nav" style="flex-direction: column;">
+                            <li class="nav-item">
+                                <div style="display: flex; align-items: center;">
+                                    <div>
+                                        @if ($user->profile_image)
+                                        <img style="width: 75px; border-radius: 100px"
+                                            src="{{ asset($user->profile_image) }}">
+                                        @else
+                                        <img style="width: 75px" src="{{ asset('assets/images/svg/user.jpg.svg') }}">
+                                        @endif
+                                    </div>
+                                    <div class="user">
+                                        <h2>{{ $user->first_name }}</h2>
+                                        <p>Real estate agent</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="sidebar">
+                            <a href="{{ route('dashboard') }}"
+                                class="nav-link  @if ($active == 'dashboard') active @endif"><i
+                                    class="@if ($active == 'dashboard') active-icon @endif fa-solid fa-table-columns"></i>Dashboard</a>
+                            <a href="{{ route('deals') }}" class="nav-link @if ($active == 'deal') active @endif"><i
+                                    class="@if ($active == 'deal') active-icon @endif fa-solid fa-list-ul"></i>Deals</a>
+                            <a href="{{ route('profile') }}"
+                                class="nav-link @if ($active == 'profile') active @endif"><i
+                                    class="@if ($active == 'profile') active-icon @endif fa-solid fa-user"></i>Profile</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+                </ul>
+            </div>
+
+
+
+            <a class="navbar-brand fdafaf fgsdf-8473" href="#">
+                <img class="logo" src="{{ asset('assets/images/logo-dashboard.PNG') }}">
             </a>
-            <!-- <div>
-                <ul class="nav" role="tablist">
+            <div>
+                <ul class="nav nav-4234" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a style="text-decoration: none;" href="">Dashboard</a>
+                        <a style="text-decoration: none;" href="{{ route('dashboard') }}">Dashboard</a>
                     </li>
                     <li class="nav-item ms-3" role="presentation">
-                        <a style="text-decoration: none;" href="">Deals</a>
+                        <a style="text-decoration: none;" href="{{ route('deals') }}">Deals</a>
                     </li>
                 </ul>
-            </div> -->
+            </div>
             <div class="dropdown"><button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     @if ($user->profile_image)
                     <img src="{{ asset($user->profile_image) }}" alt="" style="width: 70px; border-radius: 100px;">
                     @else
-                    <span class="fsadfas">L</span>
+                    <span class="fsadfas">{{ substr($user->full_name, 0, 1) }}</span>
                     @endif
-                    <span class="ms-2 me-3" style="font-size: 20px;">{{ $user->full_name }}</span><i class="fas fa-bars"></i></button>
+                    <span class="ms-2 me-3" style="font-size: 20px;">{{ $user->full_name }}</span><i
+                        class="fas fa-bars"></i></button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="#" style="font-weight: 700;">Account</a></li>
                     <hr>
@@ -58,7 +116,7 @@
     </nav>
     <div class="container-fluid px-3 h-100">
         <div class="row">
-            <div class="col-md-2 light-green">
+            <div class="col-md-2 light-green jfgksgjk-483">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <div class="">
 
@@ -67,11 +125,10 @@
                                 <div style="display: flex; align-items: center;">
                                     <div>
                                         @if ($user->profile_image)
-                                            <img style="width: 75px; border-radius: 100px"
-                                                src="{{ asset($user->profile_image) }}">
+                                        <img style="width: 75px; border-radius: 100px"
+                                            src="{{ asset($user->profile_image) }}">
                                         @else
-                                            <img style="width: 75px"
-                                                src="{{ asset('assets/images/svg/user.jpg.svg') }}">
+                                        <img style="width: 75px" src="{{ asset('assets/images/svg/user.jpg.svg') }}">
                                         @endif
                                     </div>
                                     <div class="user">
@@ -85,8 +142,7 @@
                             <a href="{{ route('dashboard') }}"
                                 class="nav-link  @if ($active == 'dashboard') active @endif"><i
                                     class="@if ($active == 'dashboard') active-icon @endif fa-solid fa-table-columns"></i>Dashboard</a>
-                            <a href="{{ route('deals') }}"
-                                class="nav-link @if ($active == 'deal') active @endif"><i
+                            <a href="{{ route('deals') }}" class="nav-link @if ($active == 'deal') active @endif"><i
                                     class="@if ($active == 'deal') active-icon @endif fa-solid fa-list-ul"></i>Deals</a>
                             <a href="{{ route('profile') }}"
                                 class="nav-link @if ($active == 'profile') active @endif"><i
