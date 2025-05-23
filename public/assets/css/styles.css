@@ -313,7 +313,7 @@ html, body {
 	border-top-right-radius: 50px;
 	border-bottom-right-radius: 50px;
 	position: relative;
-	font-weight: 500;
+	font-weight: 700;
 	transition: background 0.3s ease;
 }
 
@@ -491,7 +491,53 @@ html, body {
 	overflow-x: auto;
 	width: 100%;
 }
+/*  */
 
+.sidebar-wrapper {
+    position: relative;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+}
+
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 300px;
+    height: 100vh;
+    background-color: #F3F6F9; /* Light green */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    padding: 1rem;
+	display: none;
+}
+
+.close-sidebar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.sidebar-menu.active {
+	display: block;
+}
+
+/*  */
 @media only screen and (max-width: 768px) {
 	.lasdkf {
 		margin-top: 20px

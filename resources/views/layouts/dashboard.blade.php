@@ -25,7 +25,50 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light px-3">
         <div class="container-fluid">
-            <div class="dropdown klsd-5435" style="display: none;">
+            <button class="btn btn-light dropdown-toggle klsd-5435" style="display: none;" type="button" id="dropdownMenuButton2"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-bars" style="font-size: 25px;"></i>
+                </button>
+            <!-- Wrapper -->
+            <div class="sidebar-wrapper klsd-5435" style="display: none;">
+
+                <!-- Overlay -->
+                <div class="sidebar-overlay"></div>
+
+                <!-- Sidebar -->
+                <div class="sidebar-menu">
+                        <button class="close-sidebar"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="sidebar-header">
+                        <div class="user-info">
+                            @if ($user->profile_image)
+                            <img src="{{ asset($user->profile_image) }}" class="profile-img">
+                            @else
+                            <img src="{{ asset('assets/images/svg/user.jpg.svg') }}" class="profile-img">
+                            @endif
+                            <div class="user-details">
+                                <h2>{{ $user->first_name }}</h2>
+                                <p>Real estate agent</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-links">
+                        <a href="{{ route('dashboard') }}" class="nav-link @if ($active == 'dashboard') active @endif">
+                            <i class="fa-solid fa-table-columns"></i> Dashboard
+                        </a>
+                        <a href="{{ route('deals') }}" class="nav-link @if ($active == 'deal') active @endif">
+                            <i class="fa-solid fa-list-ul"></i> Deals
+                        </a>
+                        <a href="{{ route('profile') }}" class="nav-link @if ($active == 'profile') active @endif">
+                            <i class="fa-solid fa-user"></i> Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- <div class="dropdown klsd-5435" style="display: none;">
                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton2"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fas fa-bars" style="font-size: 25px;"></i>
@@ -71,7 +114,7 @@
                         </div>
                     </div>
                 </ul>
-            </div>
+            </div> -->
 
 
 
@@ -161,6 +204,20 @@
 
 
     @yield('script')
+    <script>
+        $(document).ready(function() {
+            $('#dropdownMenuButton2').on('click', function(e) {
+                e.stopPropagation();
+                $('.sidebar-menu').addClass('active');
+                $('.sidebar-overlay').show();
+            });
+
+            $('.sidebar-overlay, .close-sidebar').on('click', function() {
+                $('.sidebar-menu').removeClass('active');
+                $('.sidebar-overlay').hide();
+            });
+        });
+    </script>
 </body>
 
 </html>
