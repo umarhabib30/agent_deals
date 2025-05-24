@@ -495,32 +495,133 @@
             });
 
             // Function to validate required fields in a step
-            function validateStep(stepNumber) {
-                let isValid = true;
-                const $step = $(`.step-${stepNumber}`);
-                const $requiredFields = $step.find('input[required], select[required], textarea[required]');
+          function validateStep(stepNumber) {
+    let isValid = true;
+    const $step = $(`.step-${stepNumber}`);
 
-                $requiredFields.removeClass('is-invalid');
+    // Clear previous validation states
+    $step.find('input, select, textarea').removeClass('is-invalid');
 
-                $requiredFields.each(function() {
-                    if (!$(this).val().trim()) {
-                        isValid = false;
-                        $(this).addClass('is-invalid');
-                        const fieldName = $(this).attr('name')
-                            .replace(/_/g, ' ')
-                            .replace(/\b\w/g, l => l.toUpperCase());
-                        toastr.error(`${fieldName} is required`);
-                    }
-                });
+    // Step 1 Validation - Project Details
+    if (stepNumber === 1) {
+        const requiredFields = [
+            'project_type',
+            'project_name',
+            'developer',
+            'city',
+            'state',
+            'project_description'
+        ];
 
-                if (stepNumber === 3 && !$('input[name="is_dld"]:checked').length) {
-                    isValid = false;
-                    toastr.error('Please select whether client will pay initial fees');
-                    $('.is_dld-options').addClass('is-invalid');
-                }
-
-                return isValid;
+        requiredFields.forEach(field => {
+            const $field = $step.find(`[name="${field}"]`);
+            if (!$field.val().trim()) {
+                isValid = false;
+                $field.addClass('is-invalid');
+                toastr.error(`${field.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} is required`);
             }
+        });
+    }
+
+    // Step 2 Validation - Agent Information
+    else if (stepNumber === 2) {
+        const requiredFields = [
+            'agent_name',
+            'brokerage_name',
+            'brokerage_license_no',
+            'email',
+            'phone',
+            'swift_number',
+            'iban_number',
+            'account_holder_name',
+            'bank_country'
+        ];
+
+        requiredFields.forEach(field => {
+            const $field = $step.find(`[name="${field}"]`);
+            if (!$field.val().trim()) {
+                isValid = false;
+                $field.addClass('is-invalid');
+                toastr.error(`${field.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} is required`);
+            }
+        });
+
+        // Email validation
+        const emailField = $step.find('[name="email"]');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailField.val() && !emailRegex.test(emailField.val())) {
+            isValid = false;
+            emailField.addClass('is-invalid');
+            toastr.error('Please enter a valid email address');
+        }
+
+        // Phone validation
+        const phoneField = $step.find('[name="phone"]');
+        const phoneRegex = /^\+?[\d\s-]{8,}$/;
+        if (phoneField.val() && !phoneRegex.test(phoneField.val())) {
+            isValid = false;
+            phoneField.addClass('is-invalid');
+            toastr.error('Please enter a valid phone number');
+        }
+    }
+
+    // Step 3 Validation - Client Information
+    else if (stepNumber === 3) {
+        // Client name validation
+        const clientName = $step.find('[name="client_name"]');
+        if (!clientName.val().trim()) {
+            isValid = false;
+            clientName.addClass('is-invalid');
+            toastr.error('Client Name is required');
+        }
+
+        // DLD fee validation
+        if (!$('input[name="is_dld"]:checked').length) {
+            isValid = false;
+            toastr.error('Please select whether client will pay initial fees');
+            $('.is_dld-options').addClass('is-invalid');
+        }
+    }
+
+    // Step 4 Validation - Financial Details
+    else if (stepNumber === 4) {
+        const requiredFields = [
+            'project_value',
+            'commission_percentage',
+            'commission_amount',
+            'deal_status',
+            'closing_date'
+        ];
+
+        requiredFields.forEach(field => {
+            const $field = $step.find(`[name="${field}"]`);
+            if (!$field.val()) {
+                isValid = false;
+                $field.addClass('is-invalid');
+                toastr.error(`${field.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} is required`);
+            }
+        });
+
+        // Numeric validation for financial fields
+        const projectValue = parseFloat($step.find('[name="project_value"]').val());
+        const commissionPercentage = parseFloat($step.find('[name="commission_percentage"]').val());
+
+        if (projectValue <= 0) {
+            isValid = false;
+            $step.find('[name="project_value"]').addClass('is-invalid');
+            toastr.error('Project Value must be greater than 0');
+        }
+
+        if (commissionPercentage <= 0 || commissionPercentage > 100) {
+            isValid = false;
+            $step.find('[name="commission_percentage"]').addClass('is-invalid');
+            toastr.error('Commission Percentage must be between 0 and 100');
+        }
+    }
+
+    return isValid;
+}
+
 
             $('#multi-step-form').find('.step').slice(1).hide();
 

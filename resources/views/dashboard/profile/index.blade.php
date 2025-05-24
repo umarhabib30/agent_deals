@@ -116,15 +116,19 @@
                                 </div>
                                 <div class="ms-4">
                                     <p class="mb-0 fw-bold">Phone Number Verification</p>
-                                    <p class="mb-0">Verify your phone number</p>
+                                    <p class="mb-0" >Verify your phone number</p>
                                 </div>
                             </div>
                             <div class="btn-desktop">
-                                <button class="btn-danger btn">Not Verified</button>
+                                  @if ($user->is_phone_verified == 1)
+                                  <button class="btn-green btn">Verified</button>
+                                    @else
+                                    <button class="btn-danger btn">Not Verified</button>
+                                    @endif
                             </div>
                         </div>
                         <div class="mt-4 d-flex justify-content-between">
-                            <button class="btn-green btn ver-890">Verify Phone Number</button>
+                            <button class="btn-green btn ver-890" @if ($user->is_phone_verified == 1) disabled  @endif>Verify Phone Number</button>
                             <button class="btn-danger btn btn-mobile ver-890">Not Verified</button>
                         </div>
                     </div>
