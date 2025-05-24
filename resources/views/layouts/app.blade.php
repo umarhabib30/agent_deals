@@ -21,7 +21,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ route('home') }}">
                 <img class="logo" src="{{ asset('assets/images/logo_main2.svg') }}" style="width: 100%;">
             </a>
             <div class="dropdown">

@@ -118,7 +118,7 @@
 
 
 
-            <a class="navbar-brand fdafaf fgsdf-8473" href="#">
+            <a class="navbar-brand fdafaf fgsdf-8473" href="{{ route('dashboard') }}">
                 <img class="logo" src="{{ asset('assets/images/logo_small2.svg') }}" style="width: 10%">
             </a>
             <div>
@@ -166,7 +166,7 @@
                                         <img style="width: 75px; border-radius: 100px"
                                             src="{{ asset($user->profile_image) }}">
                                         @else
-                                        <img style="width: 75px" src="{{ asset('assets/images/svg/user.jpg.svg') }}">
+                                        <img style="width: 75px" src="{{ asset('assets/images/svg/dummy_profile.png ') }}">
                                         @endif
                                     </div>
                                     <div class="user">

@@ -13,10 +13,9 @@
         <div class="profile-card row align-items-center px-5">
             <div class="col-md-3 text-center">
                 @if ($user->profile_image)
-                <div class="avatar-circle"> <img src="{{ asset($user->profile_image) }}" width="80px" alt=""
-                        style="border-radius: 100px" class="selected_profile"></div>
+                <div class="avatar-circle"> <img src="{{ asset($user->profile_image) }}" width="80px" alt="" style="border-radius: 100px" class="selected_profile"></div>
                 @else
-                <div class="avatar-circle"></div>
+                <div class="avatar-circle"><img src="{{ asset('assets/images/svg/dummy_profile.png') }}" width="80px" alt="" style="border-radius: 100px" class="selected_profile"></div>
                 @endif
                 <div class="profile-name">{{ $user->full_name }}</div>
             </div>
