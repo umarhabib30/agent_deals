@@ -119,7 +119,7 @@
 
 
             <a class="navbar-brand fdafaf fgsdf-8473" href="#">
-                <img class="logo" src="{{ asset('assets/images/logo-dashboard.PNG') }}">
+                <img class="logo" src="{{ asset('assets/images/logo_small2.svg') }}" style="width: 10%">
             </a>
             <div>
                 <ul class="nav nav-4234" role="tablist">

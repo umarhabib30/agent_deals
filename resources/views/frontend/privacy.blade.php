@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-lg navbar-light px-3">
         <div class="container-fluid">
             <a class="navbar-brand fdafaf"  href="#">
-                <img class="logo" src="{{ asset('assets/images/logo.PNG') }}">
+                <img class="logo" src="{{ asset('assets/images/logo_main2.svg') }}" style="width: 100%;">
             </a>
         </div>
     </nav>

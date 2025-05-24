@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img class="logo" src="{{ asset('assets/images/logo.png') }}">
+                <img class="logo" src="{{ asset('assets/images/logo_main2.svg') }}" style="width: 100%;">
             </a>
             <div class="dropdown">
               <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
