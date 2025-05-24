@@ -91,7 +91,7 @@
                     <div class="d-flex">
                         <p><img src="{{ asset('assets/images/svg/mail.svg') }}" /> support@agentsfirst.com</p>
                         <p class="ms-3 fdsa32">
-                            <img src="{{ asset('assets/images/svg/phone.svg') }}" /> +971 55 252 2322
+                            <img src="{{ asset('assets/images/svg/Phone.svg') }}" /> +971 55 252 2322
                         </p>
                     </div>
                 </div>

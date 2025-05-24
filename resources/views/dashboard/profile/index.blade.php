@@ -1,12 +1,12 @@
 @extends('layouts.dashboard')
 @section('content')
-<div class="col-md-10 px-md-5 px-sm-0 mt-5">
+<div class="col-md-10 px-md-4 px-sm-0">
     <div class="">
-        <div class="row">
+        <div class="row mt-2">
             <div class="col-md-12">
-                <div class=" p-3 deals">
-                    <p>Settings</p>
-                    <span>Manage your profile details</span>
+                <div class="hero">
+                    <h1 style="color:#000000;font-weight:400;">Settings</h1>
+                    <p style="color:#000000;font-weight:400;font-size:16px;">Manage your profile details</p>
                 </div>
             </div>
         </div>
@@ -39,94 +39,94 @@
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-liks active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                        type="button" role="tab" aria-controls="home" aria-selected="true"><i
-                            class="fa-solid fa-user me-2"></i>Account</button>
+                    type="button" role="tab" aria-controls="home" aria-selected="true"><i
+                    class="fa-solid fa-user me-2"></i>Account</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-liks" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                        type="button" role="tab" aria-controls="profile" aria-selected="false"><i
-                            class="fa-solid fa-lock me-2"></i>Security</button>
+                    type="button" role="tab" aria-controls="profile" aria-selected="false"><i
+                    class="fa-solid fa-lock me-2"></i>Security</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-liks" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages"
-                        type="button" role="tab" aria-controls="messages" aria-selected="false"><i
-                            class="fa-solid fa-check me-2"></i>Verification</button>
+                    type="button" role="tab" aria-controls="messages" aria-selected="false"><i
+                    class="fa-solid fa-check me-2"></i>Verification</button>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                    <p class="fw-bold h-24 mb-2">Account Information</p>
-                    <p class="fw-bold h-14 light-gray-1">Edit your profile information and email.</p>
+                    <p class="mb-2" style="font-size: 32px;">Account Information</p>
+                    <p class="h-16 light-gray-1">Edit your profile information and email.</p>
                     <form action="{{ route('account.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="TextInput" class="form-label">Full Name</label>
                             <input type="text" name="full_name" id="TextInput" class="form-controls"
-                                value="{{ $user->full_name }}">
+                            value="{{ $user->full_name }}">
                         </div>
                         <div class="mb-3">
                             <label for="TextInput2" class="form-label">Email Address</label>
                             <input type="email" readonly id="TextInput2" class="form-controls"
-                                value="{{ $user->email }}">
+                            value="{{ $user->email }}">
                         </div>
                         <div class="mb-3">
                             <label for="TextInput3" class="form-label">Upload a photo <i
-                                    class="fa-solid fa-upload"></i></label>
-                            <input style="display: none;" type="file" id="TextInput3" class="form-controls"
+                                class="fa-solid fa-upload"></i></label>
+                                <input style="display: none;" type="file" id="TextInput3" class="form-controls"
                                 name="profile_image">
-                        </div>
-
-                        <button type="submit" class="btn btn-green" style="padding: 15px 40px">Update Profile</button>
-                    </form>
-                </div>
-
-                <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                    <p class="fw-bold h-24 mb-2">Password</p>
-                    <p class="fw-bold h-14 light-gray-1">Protect your account change your password regularly.</p>
-                    <form action="{{ route('account.password') }}" method="POST" id="password_form">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="TextInput" class="form-label">Current Password</label>
-                            <input type="text" name="current_password" id="current_password" class="form-controls">
-                        </div>
-                        <div class="mb-3">
-                            <label for="TextInput2" class="form-label">New Password</label>
-                            <input type="text" name="password" id="new_password" class="form-controls">
-                        </div>
-                        <div class="mb-3">
-                            <label for="TextInput3" class="form-label">Confirm New Password</label>
-                            <input type="text" name="password_confirmation" id="new_password_confirm"
-                                class="form-controls">
-                        </div>
-
-                        <button type="submit" class="btn btn-green" style="padding: 15px 40px"
-                            id="submit_password_form">Change Password</button>
-                    </form>
-                </div>
-
-                <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab" tabindex="0">
-                    <p class="fw-bold h-24 mb-2">Identity Verification</p>
-                    <p class="fw-bold h-14 light-gray-1">Verify your identity to get paid on time.</p>
-                    <div class="verify-box w-50 lfkdk-5463">
-                        <div class="d-flex justify-content-between ">
-                            <div class="d-flex align-items-center">
-                                <div>
-                                    <img src="{{ asset('assets/images/svg/Overlay.svg') }}">
-                                </div>
-                                <div class="ms-4">
-                                    <p class="mb-0 fw-bold">Phone Number Verification</p>
-                                    <p class="mb-0" >Verify your phone number</p>
-                                </div>
                             </div>
-                            <div class="btn-desktop">
+
+                            <button type="submit" class="btn btn-green" style="padding: 15px 40px">Update Profile</button>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                        <p class="mb-2" style="font-size: 32px;">Password</p>
+                        <p class="h-16 light-gray-1">Protect your account change your password regularly.</p>
+                        <form action="{{ route('account.password') }}" method="POST" id="password_form">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="TextInput" class="form-label">Current Password</label>
+                                <input type="text" name="current_password" id="current_password" class="form-controls">
+                            </div>
+                            <div class="mb-3">
+                                <label for="TextInput2" class="form-label">New Password</label>
+                                <input type="text" name="password" id="new_password" class="form-controls">
+                            </div>
+                            <div class="mb-3">
+                                <label for="TextInput3" class="form-label">Confirm New Password</label>
+                                <input type="text" name="password_confirmation" id="new_password_confirm"
+                                class="form-controls">
+                            </div>
+
+                            <button type="submit" class="btn btn-green" style="padding: 15px 40px"
+                            id="submit_password_form">Change Password</button>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab" tabindex="0">
+                        <p class="mb-2"  style="font-size: 32px;">Identity Verification</p>
+                        <p class="light-gray-1">Verify your identity to get paid on time.</p>
+                        <div class="verify-box w-50 lfkdk-5463">
+                            <div class="d-flex justify-content-between ">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <img src="{{ asset('assets/images/svg/Overlay.svg') }}">
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-0 fw-bold">Phone Number Verification</p>
+                                        <p class="mb-0" >Verify your phone number</p>
+                                    </div>
+                                </div>
+                                <div class="btn-desktop">
                                   @if ($user->is_phone_verified == 1)
                                   <button class="btn-green btn">Verified</button>
-                                    @else
-                                    <button class="btn-danger btn">Not Verified</button>
-                                    @endif
-                            </div>
-                        </div>
-                        <div class="mt-4 d-flex justify-content-between">
+                                  @else
+                                  <button class="btn-danger btn">Not Verified</button>
+                                  @endif
+                              </div>
+                          </div>
+                          <div class="mt-4 d-flex justify-content-between">
                             <button class="btn-green btn ver-890" @if ($user->is_phone_verified == 1) disabled  @endif>Verify Phone Number</button>
                             <button class="btn-danger btn btn-mobile ver-890">Not Verified</button>
                         </div>
@@ -187,50 +187,50 @@
             </div>
             <div class="modal-body">
                 <form id="uploadForm" action="{{ route('emirate.upload') }}" method="POST"
-                    enctype="multipart/form-data">
-                    @csrf
-                    <div class="mb-3 text-center">
-                        <img id="previewImage" src="" alt="Preview"
-                            style="max-width: 100%; max-height: 200px; display: none; border: 1px solid #ccc; padding: 5px; border-radius: 4px;">
-                    </div>
-                    <div class="mb-3">
-                        <label for="fileInput" class="form-label">Select Image</label>
-                        <input type="file" name="emirates_id" class="form-control" id="fileInput" accept="image/*">
-                    </div>
-                    <div class="text-end">
-                        <button type="submit" class="btn btn-green">Submit</button>
-                    </div>
-                </form>
-            </div>
+                enctype="multipart/form-data">
+                @csrf
+                <div class="mb-3 text-center">
+                    <img id="previewImage" src="" alt="Preview"
+                    style="max-width: 100%; max-height: 200px; display: none; border: 1px solid #ccc; padding: 5px; border-radius: 4px;">
+                </div>
+                <div class="mb-3">
+                    <label for="fileInput" class="form-label">Select Image</label>
+                    <input type="file" name="emirates_id" class="form-control" id="fileInput" accept="image/*">
+                </div>
+                <div class="text-end">
+                    <button type="submit" class="btn btn-green">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 </div>
 @endsection
 @section('script')
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
 
-    document.getElementById('fileInput').addEventListener('change', function(event) {
-        const file = event.target.files[0];
-        const preview = document.getElementById('previewImage');
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('previewImage');
 
-        if (file && file.type.startsWith('image/')) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                preview.src = e.target.result;
-                preview.style.display = 'block';
-            };
-            reader.readAsDataURL(file);
-        } else {
-            preview.style.display = 'none';
-            preview.src = '';
-        }
-    });
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+                preview.src = '';
+            }
+        });
 
-    $('body').on('click', '.verify-emirates-id', function(e) {
-        e.preventDefault();
-        $('#exampleModal').modal('show');
-    });
+        $('body').on('click', '.verify-emirates-id', function(e) {
+            e.preventDefault();
+            $('#exampleModal').modal('show');
+        });
 
     // update account
     $('#TextInput3').on('change', function(e) {

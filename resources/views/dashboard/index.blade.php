@@ -4,8 +4,8 @@
 @endsection
 
 @section('content')
-    <div class="col-md-10 col-md-10 mt-5 px-md-5 px-sm-0">
-        <div class="row mt-5">
+    <div class="col-md-10 col-md-10 px-md-4 px-sm-0">
+        <div class="row mt-2">
             <div class="col-md-6">
                 <div class="hero">
                     <h1 style="color:#000000;font-weight:400;">Dashboard</h1>

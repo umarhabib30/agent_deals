@@ -25,7 +25,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light px-3">
         <div class="container-fluid">
-            <button class="btn btn-light dropdown-toggle klsd-5435" style="display: none;" type="button" id="dropdownMenuButton2"
+            <button class="btn dropdown-toggle klsd-5435" style="display: none;" type="button" id="dropdownMenuButton2"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fas fa-bars" style="font-size: 25px;"></i>
                 </button>
@@ -65,59 +65,7 @@
                     </div>
                 </div>
             </div>
-
-
-
-            <!-- <div class="dropdown klsd-5435" style="display: none;">
-                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton2"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-bars" style="font-size: 25px;"></i>
-                </button>
-                <ul class="dropdown-menu light-green" style="left:0 !important; min-width: 17rem !important; padding: unset !important;" aria-labelledby="dropdownMenuButton2">
-                    <div class="row">
-                        <div class="col-md-2 light-green ">
-                            <nav class="navbar navbar-expand-lg navbar-light light-green">
-                                <div class="">
-
-                                    <ul class="navbar-nav" style="flex-direction: column;">
-                                        <li class="nav-item">
-                                            <div style="display: flex; align-items: center;">
-                                                <div>
-                                                    @if ($user->profile_image)
-                                                    <img style="width: 75px; border-radius: 100px"
-                                                        src="{{ asset($user->profile_image) }}">
-                                                    @else
-                                                    <img style="width: 75px"
-                                                        src="{{ asset('assets/images/svg/user.jpg.svg') }}">
-                                                    @endif
-                                                </div>
-                                                <div class="user">
-                                                    <h2>{{ $user->first_name }}</h2>
-                                                    <p>Real estate agent</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="sidebar">
-                                        <a href="{{ route('dashboard') }}"
-                                            class="nav-link  @if ($active == 'dashboard') active @endif"><i
-                                                class="@if ($active == 'dashboard') active-icon @endif fa-solid fa-table-columns"></i>Dashboard</a>
-                                        <a href="{{ route('deals') }}"
-                                            class="nav-link @if ($active == 'deal') active @endif"><i
-                                                class="@if ($active == 'deal') active-icon @endif fa-solid fa-list-ul"></i>Deals</a>
-                                        <a href="{{ route('profile') }}"
-                                            class="nav-link @if ($active == 'profile') active @endif"><i
-                                                class="@if ($active == 'profile') active-icon @endif fa-solid fa-user"></i>Profile</a>
-                                    </div>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </ul>
-            </div> -->
-
-
-
+            
             <a class="navbar-brand fdafaf fgsdf-8473" href="{{ route('dashboard') }}">
                 <img class="logo" src="{{ asset('assets/images/logo_small2.svg') }}" style="width: 10%">
             </a>
@@ -131,7 +79,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="dropdown"><button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1"
+            <div class="dropdown"><button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     @if ($user->profile_image)
                     <img src="{{ asset($user->profile_image) }}" alt="" style="width: 70px; border-radius: 100px;">
