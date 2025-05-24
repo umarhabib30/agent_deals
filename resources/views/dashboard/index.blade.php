@@ -8,7 +8,7 @@
         <div class="row mt-2">
             <div class="col-md-6">
                 <div class="hero">
-                    <h1 style="color:#000000;font-weight:400;">Dashboard</h1>
+                    <h1 class="mb-0" style="color:#000000;font-weight:400;">Dashboard</h1>
                     <p style="color:#000000;font-weight:400;font-size:16px;">Welcome back, {{ Auth::user()->full_name }}.
                         Here's overview.</p>
                 </div>

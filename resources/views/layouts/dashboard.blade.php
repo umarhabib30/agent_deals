@@ -28,7 +28,7 @@
             <button class="btn dropdown-toggle klsd-5435" style="display: none;" type="button" id="dropdownMenuButton2"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fas fa-bars" style="font-size: 25px;"></i>
-                </button>
+            </button>
             <!-- Wrapper -->
             <div class="sidebar-wrapper klsd-5435" style="display: none;">
 
@@ -67,7 +67,7 @@
             </div>
             
             <a class="navbar-brand fdafaf fgsdf-8473" href="{{ route('dashboard') }}">
-                <img class="logo" src="{{ asset('assets/images/logo_small2.svg') }}" style="width: 10%">
+                
             </a>
             <div>
                 <ul class="nav nav-4234" role="tablist">
@@ -102,9 +102,12 @@
     </nav>
     <div class="container-fluid px-3 h-100">
         <div class="row">
-            <div class="col-md-2 light-green jfgksgjk-483">
+            <div class="col-md-2 light-green jfgksgjk-483" style="margin-top: -68px;">
+                <a class="navbar-brand fdafaf fgsdf-8473" href="{{ route('dashboard') }}">
+                <img class="logo" src="{{ asset('assets/images/logo_small2.svg') }}" style="width: 25%;padding: 20px;">
+            </a>
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <div class="">
+                    <div class="mt-2">
 
                         <ul class="navbar-nav" style="flex-direction: column;">
                             <li class="nav-item">

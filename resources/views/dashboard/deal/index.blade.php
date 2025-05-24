@@ -4,7 +4,7 @@
     <div class="row mt-2">
         <div class="col-md-12">
             <div class="hero">
-                <h1 style="color:#000000;font-weight:400;">Deals</h1>
+                <h1 class="mb-0" style="color:#000000;font-weight:400;">Deals</h1>
                 <p style="color:#000000;font-weight:400;font-size:16px;">View all your deals in one place</p>
             </div>
         </div>
