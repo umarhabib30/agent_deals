@@ -301,6 +301,23 @@ html, body {
 	padding-top: 20px;
 	background-color: #f1f5f9;
 }
+.form-control:focus {
+    color: #212529;
+    background-color: #ffffff !important;
+    border-color: #ced4da !important;
+    outline: 0;
+    box-shadow: unset !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: #000 !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
 
 .nav-link {
 	display: flex;
