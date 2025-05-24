@@ -5,7 +5,7 @@
             <!-- Left Side -->
             <div class="col-lg-6 d-flex flex-column align-items-center px-md-5 px-sm-0">
                 <!-- Replace with actual image in your project -->
-                <img src="{{ asset('assets/images/header.PNG') }}" class="img-fluid mb-4" alt="Deal illustration">
+                <img src="{{ asset('assets/images/header.png') }}" class="img-fluid mb-4" alt="Deal illustration">
                 <p class="hero-text text-center">Close deals. Get paid. Same day.</p>
                 <div class="how-it-works text-center mt-4 w-100">
                     <div class="row">
