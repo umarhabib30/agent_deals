@@ -14,9 +14,9 @@ body {
 }
 
 .dropdown-menu[data-bs-popper] {
-	top: 100%;
-	left: 80px;
-	margin-top: .125rem;
+    top: 100%;
+    left: 35px;
+    margin-top: .125rem;
 }
 
 button#dropdownMenuButton1 {

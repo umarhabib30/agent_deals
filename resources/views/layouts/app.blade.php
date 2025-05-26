@@ -16,6 +16,11 @@
                 max-width: 1320px;
             }
         }
+        .dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: -125px !important;
+    margin-top: .125rem;
+}
     </style>
 </head>
 <body>
@@ -24,7 +29,6 @@
             <a class="navbar-brand" href="{{ route('home') }}">
                 <img class="logo" src="{{ asset('assets/images/logo_main2.svg') }}" style="width: 100%;">
             </a>
-            @if (Auth::check())
                 
             <div class="dropdown">
                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,7 +54,6 @@
                     </li>
                 </ul>
             </div>
-            @endif
 
         </div>
     </nav>
