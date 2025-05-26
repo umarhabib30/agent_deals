@@ -51,7 +51,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="sidebar-links">
                         <a href="{{ route('dashboard') }}" class="nav-link @if ($active == 'dashboard') active @endif">
                             <i class="fa-solid fa-table-columns"></i> Dashboard
@@ -86,8 +86,8 @@
                     @else
                     <span class="fsadfas">{{ substr($user->full_name, 0, 1) }}</span>
                     @endif
-                    <span class="ms-2 me-3" style="font-size: 20px;">{{ $user->full_name }}</span><i
-                        class="fas fa-bars"></i></button>
+                    <span class="ms-2 me-3 fdasf-948" style="font-size: 20px;">{{ $user->full_name }}</span><i
+                        class="fas fa-bars fdasf-948"></i></button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="#" style="font-weight: 700;">Account</a></li>
                     <hr>

@@ -129,7 +129,7 @@
         </div>
         <div class="col-md-12">
             <p class="text-center">
-                © Pay Day 2025 all rights reserved
+                © Agents First 2025 all rights reserved
             </p>
         </div>
     </div>

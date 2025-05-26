@@ -176,7 +176,7 @@ a:hover {
 
 .active-text {
 	color: #246F48;
-
+	
 }
 
 .nav-item-1 a {
@@ -302,20 +302,20 @@ html, body {
 	background-color: #f1f5f9;
 }
 .form-control:focus {
-    color: #212529;
-    background-color: #ffffff !important;
-    border-color: #ced4da !important;
-    outline: 0;
-    box-shadow: unset !important;
+	color: #212529;
+	background-color: #ffffff !important;
+	border-color: #ced4da !important;
+	outline: 0;
+	box-shadow: unset !important;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 1000px white inset !important;
-    box-shadow: 0 0 0 1000px white inset !important;
-    -webkit-text-fill-color: #000 !important;
-    transition: background-color 9999s ease-in-out 0s;
+	-webkit-box-shadow: 0 0 0 1000px white inset !important;
+	box-shadow: 0 0 0 1000px white inset !important;
+	-webkit-text-fill-color: #000 !important;
+	transition: background-color 9999s ease-in-out 0s;
 }
 
 
@@ -511,47 +511,52 @@ input:-webkit-autofill:active {
 /*  */
 
 .sidebar-wrapper {
-    position: relative;
+	position: relative;
 }
 
 .sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-    display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 998;
+	display: none;
 }
 
 .sidebar-menu {
-    position: fixed;
-    top: 0;
-    left: 0px;
-    width: 300px;
-    height: 100vh;
-    background-color: #F3F6F9; /* Light green */
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    overflow-y: auto;
-    transition: left 0.3s ease;
-    padding: 1rem;
+	position: fixed;
+	top: 0;
+	left: 0px;
+	width: 300px;
+	height: 100vh;
+	background-color: #F3F6F9; /* Light green */
+	box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+	z-index: 999;
+	overflow-y: auto;
+	transition: left 0.3s ease;
+	padding: 1rem;
 	display: none;
 }
 
 .close-sidebar {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 25px;
-    cursor: pointer;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	background: none;
+	border: none;
+	font-size: 25px;
+	cursor: pointer;
 }
 
 .sidebar-menu.active {
 	display: block;
+}
+
+.btn-check:focus+.btn, .btn:focus {
+	outline: 0;
+	box-shadow: unset !important;
 }
 
 /*  */
@@ -559,7 +564,7 @@ input:-webkit-autofill:active {
 	.lasdkf {
 		margin-top: 20px
 	}
-
+	
 	.divider {
 		display: none;
 	}
@@ -579,6 +584,9 @@ input:-webkit-autofill:active {
 	}
 }
 @media only screen and (max-width: 600px) {
+	.table {
+		width: 200% !important;
+	}
 	.bar-4234{
 		display: none !important;
 	}
@@ -597,21 +605,21 @@ input:-webkit-autofill:active {
 	.nav-4234{
 		display: none;
 	}
-
+	
 	.fgsdf-8473{
 		display: none !important;
 	}
-
+	
 	.modal.modal-right .modal-dialog {
 		width: 100% !important;
 		right: unset !important;
 		left: 0px !important;
 	}
-
+	
 	.lskdf-039 {
 		display: block !important;
 	}
-
+	
 	.jhgjh-8788 {
 		justify-content: start !important;
 	}
@@ -630,31 +638,39 @@ input:-webkit-autofill:active {
 	.navbar-brand {
 		width: 70%;
 	}
-
+	.dropdown-menu[data-bs-popper] {
+		top: 100%;
+		left: -90px !important;
+		margin-top: .125rem;
+	}
+	
+	.fdasf-948{
+		display: none !important;
+	}
 	.flex-direction {
 		flex-direction: column-reverse !important;
 	}
-
+	
 	.b-bottom {
 		border-bottom: 1px solid #D9D9D9;
 	}
-
+	
 	.logo {
 		width: 100%
 	}
-
+	
 	#chartContainer {
 		padding: 0px !important;
 	}
-
+	
 	.hero h1, .hero-text {
 		font-size: 24px !important;
 	}
-
+	
 	.hero p {
 		font-size: 20px !important;
 	}
-
+	
 	.small, small {
 		font-size: 18px !important;
 	}
@@ -673,19 +689,19 @@ input:-webkit-autofill:active {
 		font-weight: 700;
 		width: 100% !important;
 	}
-
+	
 	.btn-groups {
 		flex-direction: column-reverse !important;
 	}
-
+	
 	.mt-32 {
 		margin-top: 30px !important;
 	}
-
+	
 	.footer-text {
 		margin-top: 30px !important;
 	}
-
+	
 }
 
 @media only screen and (max-width: 400px) {
@@ -697,7 +713,7 @@ input:-webkit-autofill:active {
 	.footer-text div {
 		display: block !important;
 	}
-
+	
 	.fdsa32 {
 		margin-left: 0px !important;
 	}
