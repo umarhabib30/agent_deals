@@ -26,19 +26,23 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
         <div class="container-fluid">
+
             <a class="navbar-brand" href="{{ route('home') }}">
                 <img class="logo" src="{{ asset('assets/images/logo_main2.svg') }}" style="width: 100%;">
             </a>
-                
+
             <div class="dropdown">
-                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-bars"></i>
-                </button>
+                 @if (Auth::guard('user')->check())
+                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                     <i class="fas fa-bars"></i>
+                 </button>
+
+               @endif
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <li><a class="dropdown-item" href="#" style="font-weight: 700;">Account</a></li>
                     <hr>
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{ url('profile') }}">
                             <i class="fa-solid fa-user"></i>
                             <span>
                                 Profile
@@ -47,7 +51,7 @@
                     </li>
                     <hr>
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{ route('logout') }}">
                             <i class="fa-solid fa-right-from-bracket"></i>
                             <span>Log out</span>
                         </a>

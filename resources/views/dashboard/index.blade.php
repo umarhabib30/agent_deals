@@ -386,7 +386,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <strong class="light-gray-1">Brokerage</strong>
-                                        <p class="fw-bold"> Huz Properties</p>
+                                        <p class="fw-bold"> Livstate Real Estate Brokerage L.L.C</p>
                                     </div>
                                     <div class="col-md-6 mt-3">
                                         <strong class="light-gray-1">Brokerage License</strong>
