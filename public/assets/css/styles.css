@@ -584,6 +584,9 @@ input:-webkit-autofill:active {
 	}
 }
 @media only screen and (max-width: 600px) {
+	.fdasf-948{
+		display: none !important;
+	}
 	.table {
 		width: 200% !important;
 	}
@@ -644,9 +647,7 @@ input:-webkit-autofill:active {
 		margin-top: .125rem;
 	}
 	
-	.fdasf-948{
-		display: none !important;
-	}
+	
 	.flex-direction {
 		flex-direction: column-reverse !important;
 	}

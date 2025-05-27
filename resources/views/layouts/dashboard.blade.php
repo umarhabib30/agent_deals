@@ -41,7 +41,7 @@
                     <div class="sidebar-header">
                         <div class="user-info">
                             @if ($user->profile_image)
-                            <img src="{{ asset($user->profile_image) }}" class="profile-img">
+                            <img src="{{ asset($user->profile_image) }}" style="width: 45%;border-radius: 100%;" class="profile-img">
                             @else
                             <img src="{{ asset('assets/images/svg/user.jpg.svg') }}" class="profile-img">
                             @endif
@@ -82,7 +82,7 @@
             <div class="dropdown"><button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     @if ($user->profile_image)
-                    <img src="{{ asset($user->profile_image) }}" alt="" style="width: 70px; border-radius: 100px;">
+                    <img src="{{ asset($user->profile_image) }}" alt="" style="width: 40px; border-radius: 100px;">
                     @else
                     <span class="fsadfas">{{ substr($user->full_name, 0, 1) }}</span>
                     @endif
